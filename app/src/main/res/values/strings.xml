@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">carrotMonster</string>
+    <string name="title_activity_choose_monster">chooseMonster</string>
+</resources>
