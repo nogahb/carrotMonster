@@ -1,5 +1,6 @@
 package com.example.nogahblum.carrotmonster;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -22,17 +23,14 @@ public class WelcomeMessageAndroid extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DoIt(v);
+                startNextActivity();
             }
         });
 
-//        introMessage = (RelativeLayout) findViewById(R.id.welcome_message_layout);
-//        appContent = (LinearLayout) findViewById(R.id.app_content_layout);
     }
 
-    public void dismisWelcomeMessageBox(View view) {
-        introMessage.setVisibility(View.INVISIBLE);
-        appContent.setVisibility(View.VISIBLE);
-
+    private void startNextActivity() {
+        Intent it = new Intent(WelcomeMessageAndroid.this, CreateMonsterActivity.class);
+        startActivity(it);
     }
 }
