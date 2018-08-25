@@ -19,7 +19,8 @@
         <activity android:name=".BaseActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".WelcomeMessageAndroid" />
-
+        <activity android:name=".MainScreenActivity" />
+        <activity android:name=".CreateMonsterActivity"></activity>
     </application>
 
 </manifest>
