@@ -3,23 +3,25 @@ package com.example.nogahblum.carrotmonster;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import com.example.nogahblum.carrotmonster.Session;
 
 import static com.example.nogahblum.carrotmonster.BaseActivity.session;
 
 
 public class LoginActivity extends AppCompatActivity {
-
+    boolean a = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
 //        if (session.isLoggedIn()) {
 //            startNextActivity();
 //        }
 
-        if (true) { //TODO sweech to get info from session
+        if (a == true) { //TODO sweech to get info from session
             startNextActivity();
         }
 
