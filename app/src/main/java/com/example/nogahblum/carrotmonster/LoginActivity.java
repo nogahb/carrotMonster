@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 //            startNextActivity();
 //        }
 
-        if (a == false) { //TODO sweech to get info from session
+        if (a == true) { //TODO sweech to get info from session
             startNextActivity();
         }
 
