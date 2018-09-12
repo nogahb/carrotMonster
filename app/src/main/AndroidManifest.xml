@@ -13,7 +13,9 @@
 
         <activity android:name=".SplashActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action
+                    android:name="android.intent.action.MAIN"
+                    android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -21,8 +23,14 @@
         <activity android:name=".BaseActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".WelcomeMessageAndroid" />
-        <activity android:name=".MainScreenActivity" />
-        <activity android:name=".CreateMonsterActivity"></activity>
+        <activity
+            android:name=".MainScreenActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".CreateMonsterActivity"/>
+        <activity android:name=".UserInfo"/>
+        <activity android:name=".MonsterInfo">
+
+        </activity>
 
 </application>
 
