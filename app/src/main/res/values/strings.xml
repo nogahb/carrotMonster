@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">carrotMonster</string>
     <string name="title_activity_choose_monster">chooseMonster</string>
+    <string name="main_screen">MAIN SCREEN</string>
 </resources>

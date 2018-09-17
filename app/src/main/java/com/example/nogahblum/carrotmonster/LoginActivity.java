@@ -3,6 +3,8 @@ package com.example.nogahblum.carrotmonster;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.nogahblum.carrotmonster.Session;
 
@@ -10,7 +12,7 @@ import static com.example.nogahblum.carrotmonster.BaseActivity.session;
 
 
 public class LoginActivity extends AppCompatActivity {
-    boolean a = false;
+    boolean isLogin = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +23,30 @@ public class LoginActivity extends AppCompatActivity {
 //            startNextActivity();
 //        }
 
-        if (a == false) { //TODO sweech to get info from session
-            startNextActivity();
-        }
+        Button loginButton= (Button) findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                isLogin = session.isLoggedIn();
+                startNextActivity();
+            }
+        });
 
-        else {
-            startRegisterActivity();
-        }
+        Button registerButton= (Button) findViewById(R.id.registerButton);
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startRegisterActivity();
+            }
+        });
+
+//        if (isLogin) { //TODO switch to get info from session
+//            startNextActivity();
+//        }
+//
+//        else {
+//            startRegisterActivity();
+//        }
     }
 
     private void startNextActivity() {
