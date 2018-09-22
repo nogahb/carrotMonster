@@ -68,7 +68,7 @@ public class RgisterActivity extends AppCompatActivity {
     }
 
     private void startNextActivity() {
-        Intent it = new Intent(RgisterActivity.this, LoginActivity.class);
+        Intent it = new Intent(RgisterActivity.this, CreateMonsterActivity.class);
         startActivity(it);
         finish();
     }
