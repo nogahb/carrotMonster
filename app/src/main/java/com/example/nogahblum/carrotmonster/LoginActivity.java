@@ -1,22 +1,33 @@
 package com.example.nogahblum.carrotmonster;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import com.example.nogahblum.carrotmonster.Session;
-
-import static com.example.nogahblum.carrotmonster.BaseActivity.session;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class LoginActivity extends AppCompatActivity {
-    boolean isLogin = false;
+    private Boolean isLogin;
+    private EditText mName, mPassword;
+
+
+    private SharedPreferences prefs;
+    private SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+//        my_session = new Session(this);
+        mName = (EditText) findViewById(R.id.user_name);
+        mPassword = (EditText) findViewById(R.id.editText2_password__register);
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
 
 
 //        if (session.isLoggedIn()) {
@@ -27,18 +38,33 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                isLogin = session.isLoggedIn();
-                startNextActivity();
+
+                String password = mPassword.getText().toString();
+                String name = mName.getText().toString();
+//                isLogin = session.isLoggedIn(name,password);
+                isLogin = isLoggedIn(name,password);
+//                session.logOut();
+//                startNextActivity();
+
+             if (isLogin){
+                 startNextActivity();}
+                else{
+//                    //todo toast failed
+                    Toast.makeText(LoginActivity.this,
+                            "Failed to log in", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
-        Button registerButton= (Button) findViewById(R.id.registerButton);
+        Button registerButton= (Button) findViewById(R.id.Next_register);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startRegisterActivity();
             }
         });
+
+
 
 //        if (isLogin) { //TODO switch to get info from session
 //            startNextActivity();
@@ -58,7 +84,11 @@ public class LoginActivity extends AppCompatActivity {
     private void startRegisterActivity() {
         Intent it = new Intent(LoginActivity.this, WelcomeMessageAndroid.class);
         startActivity(it);
+        finish();
     }
 
-
+    public Boolean isLoggedIn(String user,String pass_word){
+        String a = prefs.getString(user, "1");
+        return a.equals(pass_word);
+    }
 }
