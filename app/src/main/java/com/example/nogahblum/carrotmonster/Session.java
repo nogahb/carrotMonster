@@ -35,7 +35,7 @@ public class Session extends AppCompatActivity {
 
     //Storing Data
 
-//  bn bn                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+//  bn bn
 
 
     public void register(String user_mane,String passvord) {

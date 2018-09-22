@@ -19,8 +19,6 @@ import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
-//HI!!!!!!!!!!!!
-
 public class MainScreenActivity extends AppCompatActivity {
 
     @Override
