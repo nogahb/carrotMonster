@@ -30,7 +30,8 @@ public class WelcomeMessageAndroid extends AppCompatActivity {
     }
 
     private void startNextActivity() {
-        Intent it = new Intent(WelcomeMessageAndroid.this, CreateMonsterActivity.class);
+        Intent it = new Intent(WelcomeMessageAndroid.this, RgisterActivity.class);
         startActivity(it);
+        finish();
     }
 }
