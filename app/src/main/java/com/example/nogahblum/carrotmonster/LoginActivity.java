@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 
 public class LoginActivity extends AppCompatActivity {
     private Boolean isLogin;
@@ -47,7 +49,12 @@ public class LoginActivity extends AppCompatActivity {
 //                startNextActivity();
 
              if (isLogin){
-                 startNextActivity();}
+                 Session.setUserName(name);
+                 Monster uset_monster = get_monster(name);
+                 Session.set_monster(uset_monster);
+                 startNextActivity();
+
+             }
                 else{
 //                    //todo toast failed
                     Toast.makeText(LoginActivity.this,
@@ -90,5 +97,11 @@ public class LoginActivity extends AppCompatActivity {
     public Boolean isLoggedIn(String user,String pass_word){
         String a = prefs.getString(user, "1");
         return a.equals(pass_word);
+    }
+    private Monster get_monster(String name){
+        Gson gson = new Gson();
+        String json = prefs.getString(name+"monster", "");
+        Monster obj = gson.fromJson(json, Monster.class);
+        return obj;
     }
 }

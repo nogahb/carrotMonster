@@ -11,7 +11,8 @@ package com.example.nogahblum.carrotmonster;
 
 public class Session extends AppCompatActivity {
 
-    private static final String USER_NAME = "username";
+    public static  String USER_NAME = "" ;
+    public static Monster curmonster = null;
     private static final String USER_ID = "userid";
     private static final String SETTINGS_NAVIGATION = "navigation";
     private static final String SETTINGS_LOCAL_SERVER = "server";
@@ -58,8 +59,16 @@ public class Session extends AppCompatActivity {
         editor.clear();
         editor.apply();
     }
-//    public void setUserName(String userName) {
-//        prefs.edit().putString(USER_NAME, userName).apply();
+    public static void setUserName(String userName) {
+        USER_NAME = userName;
+
+    }    public static void set_monster(Monster userName) {
+        curmonster = userName;
+
+    }
+//    public static void set_user_info(String name){
+//        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+//
 //    }
 //
 //

@@ -1,6 +1,7 @@
 package com.example.nogahblum.carrotmonster;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
@@ -81,10 +81,10 @@ public class MainScreenActivity extends AppCompatActivity {
             ImageView fabContent = new ImageView(getActivity());
             fabContent.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_user));
 
-            FloatingActionButton darkButton = new FloatingActionButton.Builder(getActivity())
-                    .setTheme(FloatingActionButton.THEME_DARK)
+            com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton darkButton = new com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.Builder(getActivity())
+                    .setTheme(com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.THEME_DARK)
                     .setContentView(fabContent)
-                    .setPosition(FloatingActionButton.POSITION_BOTTOM_CENTER)
+                    .setPosition(com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.POSITION_BOTTOM_CENTER)
                     .build();
 
             // Create menu items:

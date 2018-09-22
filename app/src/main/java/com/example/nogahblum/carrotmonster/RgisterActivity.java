@@ -35,7 +35,11 @@ public class RgisterActivity extends AppCompatActivity {
                 if (isussernamefree(name)){
                 register(name,password);
                     Toast.makeText(RgisterActivity.this,
-                            "Registered", Toast.LENGTH_LONG).show();}
+                            "Registered", Toast.LENGTH_LONG).show();
+                    startNextActivity(name);
+                }
+
+
                 else{
                     Toast.makeText(RgisterActivity.this,
                             "User name taken", Toast.LENGTH_LONG).show();
@@ -54,8 +58,6 @@ public class RgisterActivity extends AppCompatActivity {
         registerButton_n.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                logOut();
-                startNextActivity();
             }
         });
 
@@ -67,9 +69,10 @@ public class RgisterActivity extends AppCompatActivity {
         editor.apply();
     }
 
-    private void startNextActivity() {
+    private void startNextActivity(String user) {
         Intent it = new Intent(RgisterActivity.this, CreateMonsterActivity.class);
         startActivity(it);
+        Session.setUserName(user);
         finish();
     }
     public void logOut() {
