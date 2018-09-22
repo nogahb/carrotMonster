@@ -21,10 +21,10 @@ public class CreateMonsterActivity extends AppCompatActivity {
             viewPager.setAdapter(myadapter);
     }
 
-    private void startNextActivity() {
-        Intent it = new Intent(CreateMonsterActivity.this, MainScreenActivity.class);
-        startActivity(it);
-        }
+//    private void startNextActivity() {
+//        Intent it = new Intent(CreateMonsterActivity.this, ChooseFoodActivity.class);
+//        startActivity(it);
+//        }
 
 }
 

@@ -26,8 +26,9 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".CreateMonsterActivity" />
         <activity android:name=".UserInfo" />
-        <activity android:name=".MonsterInfo"></activity>
-        <activity android:name=".RgisterActivity"></activity>
+        <activity android:name=".MonsterInfo" />
+        <activity android:name=".RgisterActivity" />
+        <activity android:name=".ChooseFoodActivity"></activity>
     </application>
 
 </manifest>

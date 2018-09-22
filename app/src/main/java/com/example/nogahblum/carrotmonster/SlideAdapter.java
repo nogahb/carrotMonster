@@ -94,7 +94,7 @@ public class SlideAdapter  extends PagerAdapter {
     }
     private void startNextActivity() {
         //todo inmplement a move to the next activity
-        Intent it = new Intent(context, MainScreenActivity.class);
+        Intent it = new Intent(context, ChooseFoodActivity.class);
         context.startActivity(it);
 
     }

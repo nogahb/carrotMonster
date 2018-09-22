@@ -14,6 +14,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
@@ -73,8 +74,10 @@ public class MainScreenActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+
             View rootView = inflater.inflate(R.layout.activity_main_screen, container, false);
 
+            // Create a button to attach the menu:
             ImageView fabContent = new ImageView(getActivity());
             fabContent.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_user));
 
@@ -84,8 +87,18 @@ public class MainScreenActivity extends AppCompatActivity {
                     .setPosition(FloatingActionButton.POSITION_BOTTOM_CENTER)
                     .build();
 
+            // Create menu items:
             SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(getActivity())
                     .setTheme(SubActionButton.THEME_DARK);
+//
+//            for( int i = 0; i < myMonster.getGoodFood.length; i++ )
+//            {
+//                TextView textView = new TextView(this.getContext());
+//                textView.setText(textArray[i]);
+//                linearLayout.addView(textView);
+//            }
+
+
             ImageView rlIcon1 = new ImageView(getActivity());
             ImageView rlIcon2 = new ImageView(getActivity());
             ImageView rlIcon3 = new ImageView(getActivity());
