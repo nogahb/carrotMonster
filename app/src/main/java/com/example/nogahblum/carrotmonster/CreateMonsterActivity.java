@@ -19,22 +19,15 @@ public class CreateMonsterActivity extends AppCompatActivity {
             viewPager = (ViewPager) findViewById(R.id.viewpager);
             myadapter = new SlideAdapter(this);
             viewPager.setAdapter(myadapter);
-
-
-
-
     }
 
     private void startNextActivity() {
         Intent it = new Intent(CreateMonsterActivity.this, MainScreenActivity.class);
         startActivity(it);
-//    }
         }
 
-
-
 }
-//
+
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);

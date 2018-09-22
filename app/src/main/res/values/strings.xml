@@ -3,4 +3,5 @@
     <string name="title_activity_choose_monster">chooseMonster</string>
     <string name="main_screen">MAIN SCREEN</string>
     <string name="create_me">Create Me!</string>
+    <string name="action_settings">action_settings</string>
 </resources>
