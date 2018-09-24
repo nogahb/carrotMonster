@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewDebug;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -64,7 +65,7 @@ public class SlideAdapter  extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.slide,container,false);
         LinearLayout layoutslide = (LinearLayout) view.findViewById(R.id.slidelinearlayout);
@@ -80,7 +81,7 @@ public class SlideAdapter  extends PagerAdapter {
             button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startNextActivity();
+                startNextActivity(position);
             }
         });
         description.setText(lst_description[position]);
@@ -92,9 +93,10 @@ public class SlideAdapter  extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((LinearLayout)object);
     }
-    private void startNextActivity() {
-        //todo inmplement a move to the next activity
+    private void startNextActivity(int p) {
         Intent it = new Intent(context, ChooseFoodActivity.class);
+        String p2 = String.valueOf(p);
+        it.putExtra("KEY_StringName",p2);
         context.startActivity(it);
 
     }

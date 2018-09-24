@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Monster {
 
     // globals:
-    public static final int DEFAULT_LEVEL = 0;
-    public static final int GOOD_HEALTH = 3;
-    public static final int NORMAL_HEALTH = 2;
-    public static final int BAD_HEALTH = 1;
-    public static final int DEATH = 0;
+    public  final int DEFAULT_LEVEL = 0;
+    public  final int GOOD_HEALTH = 3;
+    public  final int NORMAL_HEALTH = 2;
+    public  final int BAD_HEALTH = 1;
+    public  final int DEATH = 0;
 
     // Monster fields:
     private int level;
@@ -18,7 +18,7 @@ public class Monster {
     private ArrayList<String> badFood;
 
     // Monster constructor
-    public Monster(ArrayList<String> goodFood, ArrayList<String> badFood)
+    public Monster(ArrayList<String> goodFood, ArrayList<String> badFood,String monster_type)
     {
         this.level = DEFAULT_LEVEL;
         this.health = GOOD_HEALTH;

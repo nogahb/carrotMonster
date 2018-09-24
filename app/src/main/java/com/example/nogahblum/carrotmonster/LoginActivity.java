@@ -104,4 +104,5 @@ public class LoginActivity extends AppCompatActivity {
         Monster obj = gson.fromJson(json, Monster.class);
         return obj;
     }
+
 }
