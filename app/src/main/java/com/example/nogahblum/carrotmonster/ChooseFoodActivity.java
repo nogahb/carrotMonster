@@ -48,19 +48,21 @@ public class ChooseFoodActivity extends AppCompatActivity {
                 ArrayList<String> good_list = new ArrayList<>();
                 ArrayList<String> bad_list = new ArrayList<>();
 
-                if (!good1.equals("")){
+                if (!(good1.equals(""))){
+//                    Toast.makeText(ChooseFoodActivity.this,
+//                            "OK", Toast.LENGTH_LONG).show();
                 good_list.add(good1);}
-                if (!good2.equals("")){
+                if (!(good2.equals(""))){
                     good_list.add(good2);}
-                if (!good3.equals("")){
+                if (!(good3.equals(""))){
                     good_list.add(good3);}
-                if (!bad1.equals("")){
-                    good_list.add(bad1);}
-                if (!bad2.equals("")){
-                    good_list.add(bad2);}
-                if (!bad3.equals("")){
-                    good_list.add(bad3);}
-                    if ((bad_list.size() != 0)& good_list.size() != 0){
+                if (!(bad1.equals(""))){
+                    bad_list.add(bad1);}
+                if (!(bad2.equals(""))){
+                    bad_list.add(bad2);}
+                if (!(bad3.equals(""))){
+                    bad_list.add(bad3);}
+                    if ((bad_list.size() != 0) || good_list.size() != 0){
                 Monster new_m = new Monster(good_list,bad_list,type_m);
                 save_monster(new_m);
                 Session.set_monster(new_m);
