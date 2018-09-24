@@ -1,5 +1,7 @@
 package com.example.nogahblum.carrotmonster;
 
+import java.util.ArrayList;
+
 public class Monster {
 
     // globals:
@@ -12,11 +14,11 @@ public class Monster {
     // Monster fields:
     private int level;
     private int health;
-    private String[] goodFood;
-    private String[] badFood;
+    private ArrayList<String> goodFood;
+    private ArrayList<String> badFood;
 
     // Monster constructor
-    public Monster(String[] goodFood, String[] badFood)
+    public Monster(ArrayList<String> goodFood, ArrayList<String> badFood)
     {
         this.level = DEFAULT_LEVEL;
         this.health = GOOD_HEALTH;
@@ -36,12 +38,12 @@ public class Monster {
         return health;
     }
 
-    String[] getGoodFood()
+    ArrayList<String> getGoodFood()
     {
         return goodFood;
     }
 
-    String[] getBadFood()
+    ArrayList<String> getBadFood()
     {
         return badFood;
     }

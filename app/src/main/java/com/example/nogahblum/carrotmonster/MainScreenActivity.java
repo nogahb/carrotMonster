@@ -20,6 +20,8 @@ import android.widget.TextView;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
+import java.util.ArrayList;
+
 public class MainScreenActivity extends AppCompatActivity {
 
     @Override
@@ -88,55 +90,64 @@ public class MainScreenActivity extends AppCompatActivity {
                     .build();
 
             // Create menu items:
+            ArrayList<String> goodFoodArr = Session.curmonster.getGoodFood();
+            ArrayList<String> badFoodArr = Session.curmonster.getBadFood();
+
+            TextView[] textToButtons = new TextView[goodFoodArr.size() + badFoodArr.size()];
+
+            for( int i = 0; i < goodFoodArr.size(); i++ )
+            {
+                TextView textView = new TextView(this.getContext());
+                textView.setText(Session.curmonster.getGoodFood().get(i));
+                textToButtons[i] = textView;
+            }
+
+            for( int i = goodFoodArr.size(); i < goodFoodArr.size() + badFoodArr.size(); i++ )
+            {
+                TextView textView = new TextView(this.getContext());
+                textView.setText(Session.curmonster.getGoodFood().get(i));
+                textToButtons[i] = textView;
+            }
+
+//            ImageView rlIcon1 = new ImageView(getActivity());
+//            ImageView rlIcon2 = new ImageView(getActivity());
+//            ImageView rlIcon3 = new ImageView(getActivity());
+//            ImageView rlIcon4 = new ImageView(getActivity());
+//            ImageView rlIcon5 = new ImageView(getActivity());
+//            ImageView rlIcon6 = new ImageView(getActivity());
+//
+//            rlIcon1.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_pass));
+//            rlIcon2.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_pass));
+//            rlIcon3.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_pass));
+//            rlIcon4.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_pass));
+//            rlIcon5.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_pass));
+//            rlIcon6.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_pass));
+
+            // Set all SubActionButtons
+//            FloatingActionMenu centerBottomMenu = new FloatingActionMenu.Builder(getActivity())
+//                    .setStartAngle(0).setEndAngle(-180).setAnimationHandler(new SlideInAnimationHandler())
+//                    .addSubActionView(rLSubBuilder.setContentView(rlIcon1).build())
+//                    .addSubActionView(rLSubBuilder.setContentView(rlIcon2).build())
+//                    .addSubActionView(rLSubBuilder.setContentView(rlIcon3).build())
+//                    .addSubActionView(rLSubBuilder.setContentView(rlIcon4).build())
+//                    .addSubActionView(rLSubBuilder.setContentView(rlIcon5).build())
+//                    .addSubActionView(rLSubBuilder.setContentView(rlIcon6).build())
+//                    .attachTo(darkButton)
+//                    .build();
+
+            // Set all SubActionButtons
+            FloatingActionMenu.Builder centerBottomMenu = new FloatingActionMenu.Builder(getActivity()).setStartAngle(0)
+                    .setEndAngle(-180).setAnimationHandler(new SlideInAnimationHandler());
+
             SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(getActivity())
                     .setTheme(SubActionButton.THEME_DARK);
 
-//            String[] goodFoodArr = Session.curmonster.getGoodFood();
-//            String[] badFoodArr = Session.curmonster.getBadFood();
-//
-//            TextView[] textToButtons = new TextView[goodFoodArr.length + badFoodArr.length];
-//
-//            for( int i = 0; i < goodFoodArr.length; i++ )
-//            {
-//                TextView textView = new TextView(this.getContext());
-//                textView.setText(Session.curmonster.getGoodFood()[i]);
-//                textToButtons[i] = textView;
-//            }
-//
-//            for( int i = goodFoodArr.length; i < goodFoodArr.length + badFoodArr.length; i++ )
-//            {
-//                TextView textView = new TextView(this.getContext());
-//                textView.setText(Session.curmonster.getGoodFood()[i]);
-//                textToButtons[i] = textView;
-//            }
+            for (int i = 0; i < goodFoodArr.size() + badFoodArr.size(); i++) {
+//                centerBottomMenu.addSubActionView(rLSubBuilder.setContentView(textToButtons[i]));
+//                centerBottomMenu.
 
-            ImageView rlIcon1 = new ImageView(getActivity());
-            ImageView rlIcon2 = new ImageView(getActivity());
-            ImageView rlIcon3 = new ImageView(getActivity());
-            ImageView rlIcon4 = new ImageView(getActivity());
-            ImageView rlIcon5 = new ImageView(getActivity());
-            ImageView rlIcon6 = new ImageView(getActivity());
+            }
 
-            rlIcon1.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_pass));
-            rlIcon2.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_pass));
-            rlIcon3.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_pass));
-            rlIcon4.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_pass));
-            rlIcon5.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_pass));
-            rlIcon6.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_action_pass));
-
-            // Set all SubActionButtons //TODO: continue here!
-            FloatingActionMenu centerBottomMenu = new FloatingActionMenu.Builder(getActivity())
-                    .setStartAngle(0)
-                    .setEndAngle(-180)
-                    .setAnimationHandler(new SlideInAnimationHandler())
-                    .addSubActionView(rLSubBuilder.setContentView(rlIcon1).build())
-                    .addSubActionView(rLSubBuilder.setContentView(rlIcon2).build())
-                    .addSubActionView(rLSubBuilder.setContentView(rlIcon3).build())
-                    .addSubActionView(rLSubBuilder.setContentView(rlIcon4).build())
-                    .addSubActionView(rLSubBuilder.setContentView(rlIcon5).build())
-                    .addSubActionView(rLSubBuilder.setContentView(rlIcon6).build())
-                    .attachTo(darkButton)
-                    .build();
 
             return rootView;
         }
