@@ -1,9 +1,13 @@
 package com.example.nogahblum.carrotmonster;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+
+import com.google.gson.Gson;
 
 
 public class SplashActivity extends AppCompatActivity {
