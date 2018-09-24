@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
-            android:text="Welcome to ViralAndroid"
+            android:text="carrot Monster"
             android:textColor="#ddd"
             android:textSize="28sp"
             android:textStyle="bold" />
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/welcome_title"
-            android:text="Here you will learn to develop profession android application with our tutorials, examples, tips and tricks, ux/ui design etc. These all tutorial and examples are available at free of cost. \n\nEither you are beginner or expert android developer we provide best tutorial and examples to you."
+            android:text="Carrot Monster is an app developed for helping people quit bad habits and gain good ones, specifically regarding food. In this app the user will create a monster that will grow based on the user habits, if the user will feed the monster with good habits, based on his behavior the monster will grow. If the user will feed the monster with good habits the monster will grow to its attracting state, else the monster will change to a less attracting state. The monster has to be fed or else it will grow old and die(at least  every 100 hours). "
             android:textColor="#ddd"
             android:textSize="18sp" />
 
@@ -57,7 +57,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome Message For Android Application with Source Code. Welcome Message For Android Application with Source Code"
             android:textColor="#fff"
             android:textSize="25sp" />
 

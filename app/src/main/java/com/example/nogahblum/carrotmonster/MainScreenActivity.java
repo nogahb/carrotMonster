@@ -38,7 +38,6 @@ public class MainScreenActivity extends AppCompatActivity {
         String json = gson.toJson(Session.curmonster);
         editor.putString(Session.USER_NAME+"monster", json);
         editor.apply();
-
     }
 
     @Override

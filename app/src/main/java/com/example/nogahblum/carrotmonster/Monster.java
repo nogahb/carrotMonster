@@ -1,5 +1,7 @@
 package com.example.nogahblum.carrotmonster;
 
+import android.widget.TableRow;
+
 import java.util.ArrayList;
 
 public class Monster {
@@ -14,6 +16,7 @@ public class Monster {
     // Monster fields:
     String type;
     private int level;
+    private Long last_fed;
     private int health;
     private ArrayList<String> goodFood;
     private ArrayList<String> badFood;
@@ -26,6 +29,8 @@ public class Monster {
         this.health = GOOD_HEALTH;
         this.goodFood = goodFood;
         this.badFood = badFood;
+        this.last_fed = System.currentTimeMillis()/1000;
+        //3600 diff is an hour
     }
 
 
@@ -68,5 +73,19 @@ public class Monster {
     {
         this.health = newHealth;
     }
+    public String check_on_monster(){
+        Long time = System.currentTimeMillis()/1000;
+        if ((time-this.last_fed)>(3600*100)){
+            return "ded";
+
+        }
+        if((time-this.last_fed)>(3600*50)){
+            return "hungry";
+
+        }
+        return "OK";
+    }
+
+
 
 }
