@@ -24,6 +24,8 @@ public class RgisterActivity extends AppCompatActivity {
         mPassword = (EditText) findViewById(R.id.editText2_password__register);
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = prefs.edit();
+//        logOut();
+
 
         final Button registerinButton= (Button) findViewById(R.id.loginButton_register);
         registerinButton.setOnClickListener(new View.OnClickListener() {
@@ -78,8 +80,8 @@ public class RgisterActivity extends AppCompatActivity {
     }
     public void logOut() {
         SharedPreferences.Editor editor = prefs.edit();
-//        editor.clear();
-//        editor.apply();
+        editor.clear();
+        editor.apply();
     }
 
     public Boolean isussernamefree(String user){
