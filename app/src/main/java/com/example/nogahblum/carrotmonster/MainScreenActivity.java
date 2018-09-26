@@ -28,6 +28,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
     private SharedPreferences prefs;
 
+
     @Override
     protected void onPause()
     {
@@ -45,6 +46,10 @@ public class MainScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
+        ImageView img= (ImageView) findViewById(R.id.imageViewmain);
+        img.setImageResource(R.drawable.image_1);
+        //todo image_dufault
+
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
                     .add(R.id.container, new CustomAnimationDemoFragment())
@@ -55,6 +60,18 @@ public class MainScreenActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         if (Session.curmonster != null){
+
+            if (Session.curmonster.getGrowthCounter() > 5) {
+                Session.curmonster.changeLevel(1);
+                img.setImageResource(R.drawable.image_2);//todo good img
+            }
+
+            if (Session.curmonster.getGrowthCounter() < -3) {
+                Session.curmonster.changeLevel(-1);
+                img.setImageResource(R.drawable.image_2);//todo bad img
+            }
+
+
             String satet  = Session.curmonster.check_on_monster();
             if (satet.equals("hungry")){
                 Toast.makeText(MainScreenActivity.this,
@@ -67,12 +84,12 @@ public class MainScreenActivity extends AppCompatActivity {
                         Session.curmonster.type);
                 Session.curmonster =reborn_m;
             }
-            if(satet.equals("OK")){
-                Toast.makeText(MainScreenActivity.this,
-                        " Nice to see you "+Session.USER_NAME, Toast.LENGTH_LONG).show();
+//            if(satet.equals("OK")){
+////                Toast.makeText(MainScreenActivity.this,
+////                        " Nice to see you "+Session.USER_NAME, Toast.LENGTH_LONG).show();
+//
+//                }
 
-
-            }
         }
 
     }
@@ -110,7 +127,7 @@ public class MainScreenActivity extends AppCompatActivity {
         public final int GOOD_FOOD = 1;
         public final int BAD_FOOD = -1;
         public final int LEVEL_UP = 5;
-        public final int LEVEL_DOWN = 3;
+        public final int LEVEL_DOWN = -3;
 
 
 
@@ -187,7 +204,6 @@ public class MainScreenActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 feedGoodFood(good3.getText(), 3);
-
             }
         });
 
@@ -202,7 +218,6 @@ public class MainScreenActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 feedBadFood(bad2.getText(), 2);
-
             }
         });
 
@@ -210,7 +225,6 @@ public class MainScreenActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 feedBadFood(bad3.getText(), 3);
-
             }
         });
 
@@ -226,9 +240,11 @@ public class MainScreenActivity extends AppCompatActivity {
             Session.curmonster.update_when_fed();
 
             Session.curmonster.changeGrowthCounter(GOOD_FOOD);
-            if (Session.curmonster.getGrowthCounter() == LEVEL_UP) {
-                Session.curmonster.changeLevel(GOOD_FOOD);
-                // todo change monster pic here
+
+
+            if (Session.curmonster.getGrowthCounter() > 5) {
+                //restart
+                getActivity().recreate();
             }
 
         }
@@ -240,9 +256,10 @@ public class MainScreenActivity extends AppCompatActivity {
             Session.curmonster.update_when_fed();
 
             Session.curmonster.changeGrowthCounter(BAD_FOOD);
-            if (Session.curmonster.getGrowthCounter() == LEVEL_DOWN) {
-                Session.curmonster.changeLevel(BAD_FOOD);
-                // todo change monster pic here
+            if (Session.curmonster.getGrowthCounter() < -3) {
+                //restart
+                getActivity().recreate();
+
             }
 
         }
