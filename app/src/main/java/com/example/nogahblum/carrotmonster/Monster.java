@@ -94,7 +94,7 @@ public class Monster {
         if (change == 1 || change == -1) {
             this.growthCounter += change;
         }
-    }
+    }//hi
 
     public String check_on_monster(){
         Long time = System.currentTimeMillis()/1000;
