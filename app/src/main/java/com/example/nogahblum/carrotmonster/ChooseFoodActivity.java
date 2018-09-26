@@ -63,7 +63,8 @@ public class ChooseFoodActivity extends AppCompatActivity {
                     bad_list.add(bad2);}
                 if (!(bad3.equals(""))){
                     bad_list.add(bad3);}
-                    if ((bad_list.size() != 0) || (good_list.size() != 0)){
+
+                    if ((bad_list.size() == 3) && (good_list.size() == 3)){
                 Monster new_m = new Monster(good_list,bad_list,type_m);
                 save_monster(new_m);
                 Session.set_monster(new_m);
@@ -73,7 +74,7 @@ public class ChooseFoodActivity extends AppCompatActivity {
                 }
                 else {
                         Toast.makeText(ChooseFoodActivity.this,
-                                "Failed", Toast.LENGTH_LONG).show();
+                                "Failed please fill all the fields above before continuing ", Toast.LENGTH_LONG).show();
                     }
             }
         });
