@@ -69,7 +69,7 @@ public class MainScreenActivity extends AppCompatActivity {
             }
             if(satet.equals("OK")){
                 Toast.makeText(MainScreenActivity.this,
-                        " Nice to see you again "+Session.USER_NAME, Toast.LENGTH_LONG).show();
+                        " Nice to see you "+Session.USER_NAME, Toast.LENGTH_LONG).show();
 
 
             }
@@ -221,7 +221,9 @@ public class MainScreenActivity extends AppCompatActivity {
 
         public void feedGoodFood(CharSequence goodFood, int msgNum) {
             Toast.makeText(getContext(), "I love " + goodFood + "! YAM!",
-                    Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_SHORT).show(); // todo add more msg
+
+            Session.curmonster.update_when_fed();
 
             Session.curmonster.changeGrowthCounter(GOOD_FOOD);
             if (Session.curmonster.getGrowthCounter() == LEVEL_UP) {
@@ -233,7 +235,9 @@ public class MainScreenActivity extends AppCompatActivity {
 
         public void feedBadFood(CharSequence badFood, int msgNum) {
             Toast.makeText(getContext(), badFood + "! YUCK! Why did you do this to me? :(",
-                    Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_SHORT).show(); // todo add more msg
+
+            Session.curmonster.update_when_fed();
 
             Session.curmonster.changeGrowthCounter(BAD_FOOD);
             if (Session.curmonster.getGrowthCounter() == LEVEL_DOWN) {

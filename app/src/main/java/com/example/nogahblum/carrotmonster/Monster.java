@@ -19,7 +19,7 @@ public class Monster {
     private int growthCounter;
     private int level;
     private Long last_fed;
-//    private int health;
+    private int health;
     private ArrayList<String> goodFood;
     private ArrayList<String> badFood;
 
@@ -30,7 +30,7 @@ public class Monster {
         this.type = type;
         this.level = DEFAULT_HEALTH_LEVEL;
         this.growthCounter = 0;
-//        this.health = GOOD_HEALTH;
+        this.health = DEFAULT_HEALTH_LEVEL;
         this.goodFood = goodFood;
         this.badFood = badFood;
         this.last_fed = System.currentTimeMillis()/1000;
@@ -55,10 +55,10 @@ public class Monster {
         return growthCounter;
     }
 
-//    int getHealth()
-//    {
-//        return health;
-//    }
+    int getHealth()
+    {
+        return health;
+    }
 
     ArrayList<String> getGoodFood()
     {
@@ -78,10 +78,10 @@ public class Monster {
         this.level = newLevel;
     }
 
-//    void setHealth(int newHealth)
-//    {
-//        this.health = newHealth;
-//    }
+    void setHealth(int newHealth)
+    {
+        this.health = newHealth;
+    }
 
     void changeLevel(int change) {
 
@@ -109,7 +109,7 @@ public class Monster {
         }
     }
 
-    public String check_on_monster(){
+    public String check_on_monster() {
         Long time = System.currentTimeMillis()/1000;
         if ((time-this.last_fed)>(3600*100)){
             return "ded";
@@ -120,6 +120,10 @@ public class Monster {
         }
 
         return "OK";
+    }
+
+    public void update_when_fed() {
+        this.last_fed = System.currentTimeMillis()/1000;
     }
 
 
