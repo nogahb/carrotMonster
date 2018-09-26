@@ -50,6 +50,7 @@ public class RgisterActivity extends AppCompatActivity {
 //                session.logOut();
 //                startNextActivity();
 
+
             }
         });
 

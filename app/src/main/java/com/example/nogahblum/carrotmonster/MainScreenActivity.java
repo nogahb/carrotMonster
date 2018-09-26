@@ -107,6 +107,13 @@ public class MainScreenActivity extends AppCompatActivity {
      */
     public static class CustomAnimationDemoFragment extends Fragment {
 
+        public final int GOOD_FOOD = 1;
+        public final int BAD_FOOD = -1;
+        public final int LEVEL_UP = 5;
+        public final int LEVEL_DOWN = 3;
+
+
+
         public CustomAnimationDemoFragment() {
         }
 
@@ -115,11 +122,11 @@ public class MainScreenActivity extends AppCompatActivity {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_main_screen, container, false);
 
-            ImageView fabContent = new ImageView(getActivity());
-            fabContent.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_user));
+        ImageView fabContent = new ImageView(getActivity());
+        fabContent.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_user));
 
 
-                com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton darkButton =
+        com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton darkButton =
                 new com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.Builder(getActivity())
                         .setTheme(com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.THEME_DARK)
                         .setContentView(fabContent)
@@ -130,107 +137,112 @@ public class MainScreenActivity extends AppCompatActivity {
         ArrayList<String> goodFoodArr = Session.curmonster.getGoodFood();
         ArrayList<String> badFoodArr = Session.curmonster.getBadFood();
 
-        TextView[] textToButtons = new TextView[goodFoodArr.size() + badFoodArr.size()];
-        String[] buttonsNames = new String[goodFoodArr.size() + badFoodArr.size()];
+        final TextView good1 = new TextView(this.getContext());
+        final TextView good2 = new TextView(this.getContext());
+        final TextView good3 = new TextView(this.getContext());
+        final TextView bad1 = new TextView(this.getContext());
+        final TextView bad2 = new TextView(this.getContext());
+        final TextView bad3 = new TextView(this.getContext());
 
-        for( int i = 0; i < goodFoodArr.size(); i++ )
-        {
-            TextView textView = new TextView(this.getContext());
-            textView.setText(Session.curmonster.getGoodFood().get(i));
-            textToButtons[i] = textView;
+        good1.setText(goodFoodArr.get(0));
+        good2.setText(goodFoodArr.get(1));
+        good3.setText(goodFoodArr.get(2));
+        bad1.setText(badFoodArr.get(0));
+        bad2.setText(badFoodArr.get(1));
+        bad3.setText(badFoodArr.get(2));
 
-            buttonsNames[i] = Session.curmonster.getGoodFood().get(i);
-        }
 
-        for( int i = 0; i < badFoodArr.size(); i++ )
-        {
-            TextView textView = new TextView(this.getContext());
-            textView.setText(Session.curmonster.getBadFood().get(i));
-            textToButtons[goodFoodArr.size() + i] = textView;
+        SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(getActivity())
+                .setTheme(SubActionButton.ACCESSIBILITY_LIVE_REGION_NONE);
 
-            buttonsNames[goodFoodArr.size() + i] = Session.curmonster.getBadFood().get(i);
+        FloatingActionMenu centerBottomMenu = new FloatingActionMenu.Builder(getActivity())
+                .setStartAngle(0)
+                .setEndAngle(-180)
+                .setAnimationHandler(new SlideInAnimationHandler())
+                .addSubActionView(rLSubBuilder.setContentView(good1).build())
+                .addSubActionView(rLSubBuilder.setContentView(good2).build())
+                .addSubActionView(rLSubBuilder.setContentView(good3).build())
+                .addSubActionView(rLSubBuilder.setContentView(bad1).build())
+                .addSubActionView(rLSubBuilder.setContentView(bad2).build())
+                .addSubActionView(rLSubBuilder.setContentView(bad3).build())
+                .attachTo(darkButton)
+                .build();
 
-        }
+        // OnClickListeners for each menu item
+        good1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                feedGoodFood(good1.getText(), 1);
+            }
+        });
 
-            SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(getActivity())
-                    .setTheme(SubActionButton.ACCESSIBILITY_LIVE_REGION_NONE);
+        good2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                feedGoodFood(good2.getText(), 2);
+            }
+        });
 
-            // Set all SubActionButtons
-            FloatingActionMenu centerBottomMenu;
+        good3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                feedGoodFood(good3.getText(), 3);
 
-            switch (textToButtons.length) {
-                case 1:
-                    centerBottomMenu = new FloatingActionMenu.Builder(getActivity())
-                            .setStartAngle(0)
-                            .setEndAngle(-180)
-                            .setAnimationHandler(new SlideInAnimationHandler())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[0]).build())
-                            .attachTo(darkButton)
-                            .build();
-                    break;
-                case 2:
-                    centerBottomMenu = new FloatingActionMenu.Builder(getActivity())
-                            .setStartAngle(0)
-                            .setEndAngle(-180)
-                            .setAnimationHandler(new SlideInAnimationHandler())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[0]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[1]).build())
-                            .attachTo(darkButton)
-                            .build();
-                    break;
-                case 3:
-                    centerBottomMenu = new FloatingActionMenu.Builder(getActivity())
-                            .setStartAngle(0)
-                            .setEndAngle(-180)
-                            .setAnimationHandler(new SlideInAnimationHandler())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[0]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[1]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[2]).build())
-                            .attachTo(darkButton)
-                            .build();
-                    break;
-                case 4:
-                    centerBottomMenu = new FloatingActionMenu.Builder(getActivity())
-                            .setStartAngle(0)
-                            .setEndAngle(-180)
-                            .setAnimationHandler(new SlideInAnimationHandler())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[0]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[1]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[2]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[3]).build())
-                            .attachTo(darkButton)
-                            .build();
-                    break;
-                case 5:
-                    centerBottomMenu = new FloatingActionMenu.Builder(getActivity())
-                            .setStartAngle(0)
-                            .setEndAngle(-180)
-                            .setAnimationHandler(new SlideInAnimationHandler())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[0]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[1]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[2]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[3]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[4]).build())
-                            .attachTo(darkButton)
-                            .build();
-                    break;
-                case 6:
-                    centerBottomMenu = new FloatingActionMenu.Builder(getActivity())
-                            .setStartAngle(0)
-                            .setEndAngle(-180)
-                            .setAnimationHandler(new SlideInAnimationHandler())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[0]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[1]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[2]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[3]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[4]).build())
-                            .addSubActionView(rLSubBuilder.setContentView(textToButtons[5]).build())
-                            .attachTo(darkButton)
-                            .build();
-                    break;
+            }
+        });
+
+        bad1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                feedBadFood(bad1.getText(), 1);
+            }
+        });
+
+        bad2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                feedBadFood(bad2.getText(), 2);
+
+            }
+        });
+
+        bad3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                feedBadFood(bad3.getText(), 3);
+
+            }
+        });
+
+
+        return rootView;
+    }
+
+
+        public void feedGoodFood(CharSequence goodFood, int msgNum) {
+            Toast.makeText(getContext(), "I love " + goodFood + "! YAM!",
+                    Toast.LENGTH_SHORT).show();
+
+            Session.curmonster.changeGrowthCounter(GOOD_FOOD);
+            if (Session.curmonster.getGrowthCounter() == LEVEL_UP) {
+                Session.curmonster.changeLevel(GOOD_FOOD);
+                // todo change monster pic here
             }
 
-            return rootView;
         }
+
+        public void feedBadFood(CharSequence badFood, int msgNum) {
+            Toast.makeText(getContext(), badFood + "! YUCK! Why did you do this to me? :(",
+                    Toast.LENGTH_SHORT).show();
+
+            Session.curmonster.changeGrowthCounter(BAD_FOOD);
+            if (Session.curmonster.getGrowthCounter() == LEVEL_DOWN) {
+                Session.curmonster.changeLevel(BAD_FOOD);
+                // todo change monster pic here
+            }
+
+        }
+
+
     }
 }
