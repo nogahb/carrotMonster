@@ -8,26 +8,51 @@
     android:background="@drawable/gradient"
     tools:context=".BaseActivity">
 
+    <TextView
+        android:id="@+id/helloText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/helloText2"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/transparent"
+        android:text="(AND WHAT I WON'T)"
+        android:textSize="20sp" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="150dp"
+    <TextView
+        android:id="@+id/helloText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/logo" />
+        android:layout_marginTop="42dp"
+        android:background="@android:color/transparent"
+        android:text="WHAT I WANT TO EAT"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/goodTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/helloText2"
+        android:layout_marginTop="147dp"
+        android:background="@android:color/transparent"
+        android:text="MY GOOD FOOD:"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/good1"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/good2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
         android:background="#11000000"
-        android:drawableLeft="@drawable/ic_action_user"
+        android:drawableLeft="@drawable/ic_good_food"
         android:ems="10"
-        android:hint="good1"
+        android:hint="  Enter 1st"
         android:inputType="textPersonName"
         android:textSize="16dp" />
 
@@ -35,13 +60,12 @@
         android:id="@+id/good2"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/good3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="218dp"
         android:background="#11000000"
-        android:drawableLeft="@drawable/ic_action_user"
+        android:drawableLeft="@drawable/ic_good_food"
         android:ems="10"
-        android:hint="good2"
+        android:hint="  Enter 2nd"
         android:inputType="textPersonName"
         android:textSize="16dp" />
 
@@ -49,43 +73,26 @@
         android:id="@+id/good3"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="252dp"
+        android:layout_centerInParent="true"
         android:background="#11000000"
-        android:drawableLeft="@drawable/ic_action_user"
+        android:drawableLeft="@drawable/ic_good_food"
         android:ems="10"
-        android:hint="good3"
+        android:hint="  Enter 3rd"
         android:inputType="textPersonName"
         android:textSize="16dp" />
 
-    <EditText
-        android:id="@+id/bad3"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
+    <TextView
+        android:id="@+id/badTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="93dp"
-        android:background="#11000000"
-        android:drawableLeft="@drawable/ic_action_user"
-        android:ems="10"
-        android:hint="bad3"
-        android:inputType="textPersonName"
-        android:textSize="16dp" />
-
-    <EditText
-        android:id="@+id/bad2"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="140dp"
-        android:background="#11000000"
-        android:drawableLeft="@drawable/ic_action_user"
-        android:ems="10"
-        android:hint="bad2"
-        android:inputType="textPersonName"
-        android:textSize="16dp" />
+        android:layout_alignStart="@+id/helloText2"
+        android:layout_marginBottom="209dp"
+        android:background="@android:color/transparent"
+        android:text="MY BAD FOOD:"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/bad1"
@@ -93,13 +100,40 @@
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="194dp"
+        android:layout_marginBottom="159.5dp"
         android:background="#11000000"
-        android:drawableLeft="@drawable/ic_action_user"
+        android:drawableLeft="@drawable/ic_bad_food"
         android:ems="10"
-        android:hint="bad1"
+        android:hint="  Enter 1st"
         android:inputType="textPersonName"
         android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/bad2"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/bad1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-160dp"
+        android:background="#11000000"
+        android:drawableLeft="@drawable/ic_bad_food"
+        android:ems="10"
+        android:hint="  Enter 2nd"
+        android:inputType="textPersonName"
+        android:textSize="16dp" />
+
+    <!--<EditText-->
+        <!--android:id="@+id/bad3"-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_below="@+id/bad2"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:background="#11000000"-->
+        <!--android:drawableLeft="@drawable/ic_bad_food"-->
+        <!--android:ems="10"-->
+        <!--android:hint="  Enter 3rd"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:textSize="16dp" />-->
 
     <Button
         android:id="@+id/Aply"
@@ -107,8 +141,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="13dp"
         android:background="@android:color/transparent"
-        android:text="Apply" />
+        android:text="Apply!"
+        android:textSize="18dp" />
 
 </RelativeLayout>

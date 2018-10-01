@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 /*
@@ -100,7 +101,7 @@ public class SubActionButton extends FrameLayout {
 
             // Default SubActionButton settings
 //            int size = context.getResources().getDimensionPixelSize(R.dimen.sub_action_button_size1);
-            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(350, 300, Gravity.TOP | Gravity.LEFT);
+            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 190, Gravity.TOP | Gravity.LEFT);
             setLayoutParams(params);
             setTheme(SubActionButton.THEME_LIGHT);
         }

@@ -57,12 +57,12 @@ public class RgisterActivity extends AppCompatActivity {
         });
 
 
-        Button registerButton_n= (Button) findViewById(R.id.Next_register);
-        registerButton_n.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
+//        Button registerButton_n= (Button) findViewById(R.id.Next_register);
+//        registerButton_n.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//            }
+//        });
 
     }
 

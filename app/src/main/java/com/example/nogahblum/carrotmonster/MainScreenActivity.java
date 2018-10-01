@@ -109,10 +109,10 @@ public class MainScreenActivity extends AppCompatActivity {
                 intent = new Intent(this, MonsterInfo.class);
                 this.startActivity(intent);
                 return true;
-            case R.id.user_info:
-                intent = new Intent(this, UserInfo.class);
-                this.startActivity(intent);
-                return true;
+//            case R.id.user_info:
+//                intent = new Intent(this, UserInfo.class);
+//                this.startActivity(intent);
+//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -134,107 +134,106 @@ public class MainScreenActivity extends AppCompatActivity {
         public CustomAnimationDemoFragment() {
         }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.activity_main_screen, container, false);
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.activity_base, container, false);
 
-        ImageView fabContent = new ImageView(getActivity());
-        fabContent.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_user));
-
-
-        com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton darkButton =
-                new com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.Builder(getActivity())
-                        .setTheme(com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.THEME_DARK)
-                        .setContentView(fabContent)
-                        .setPosition(com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.POSITION_BOTTOM_CENTER)
-                        .build();
-
-        // Create menu items:
-        ArrayList<String> goodFoodArr = Session.curmonster.getGoodFood();
-        ArrayList<String> badFoodArr = Session.curmonster.getBadFood();
-
-        final TextView good1 = new TextView(this.getContext());
-        final TextView good2 = new TextView(this.getContext());
-        final TextView good3 = new TextView(this.getContext());
-        final TextView bad1 = new TextView(this.getContext());
-        final TextView bad2 = new TextView(this.getContext());
-        final TextView bad3 = new TextView(this.getContext());
-
-        good1.setText(goodFoodArr.get(0));
-        good2.setText(goodFoodArr.get(1));
-        good3.setText(goodFoodArr.get(2));
-        bad1.setText(badFoodArr.get(0));
-        bad2.setText(badFoodArr.get(1));
-        bad3.setText(badFoodArr.get(2));
+            ImageView fabContent = new ImageView(getActivity());
+            fabContent.setImageDrawable(getResources().getDrawable(R.drawable.ic_feed));
 
 
-        SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(getActivity())
-                .setTheme(SubActionButton.ACCESSIBILITY_LIVE_REGION_NONE);
+            com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton darkButton =
+                    new com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.Builder(getActivity())
+                            .setTheme(com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.THEME_DARK)
+                            .setContentView(fabContent)
+                            .setPosition(com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.POSITION_BOTTOM_CENTER)
+                            .build();
 
-        FloatingActionMenu centerBottomMenu = new FloatingActionMenu.Builder(getActivity())
-                .setStartAngle(0)
-                .setEndAngle(-180)
-                .setAnimationHandler(new SlideInAnimationHandler())
-                .addSubActionView(rLSubBuilder.setContentView(good1).build())
-                .addSubActionView(rLSubBuilder.setContentView(good2).build())
-                .addSubActionView(rLSubBuilder.setContentView(good3).build())
-                .addSubActionView(rLSubBuilder.setContentView(bad1).build())
-                .addSubActionView(rLSubBuilder.setContentView(bad2).build())
-                .addSubActionView(rLSubBuilder.setContentView(bad3).build())
-                .attachTo(darkButton)
-                .build();
+            // Create menu items:
+            ArrayList<String> goodFoodArr = Session.curmonster.getGoodFood();
+            ArrayList<String> badFoodArr = Session.curmonster.getBadFood();
 
-        // OnClickListeners for each menu item
-        good1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                feedGoodFood(good1.getText(), 1);
-            }
-        });
+            final TextView good1 = new TextView(this.getContext());
+            final TextView good2 = new TextView(this.getContext());
+            final TextView good3 = new TextView(this.getContext());
+            final TextView bad1 = new TextView(this.getContext());
+            final TextView bad2 = new TextView(this.getContext());
+//            final TextView bad3 = new TextView(this.getContext());
 
-        good2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                feedGoodFood(good2.getText(), 2);
-            }
-        });
-
-        good3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                feedGoodFood(good3.getText(), 3);
-            }
-        });
-
-        bad1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                feedBadFood(bad1.getText(), 1);
-            }
-        });
-
-        bad2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                feedBadFood(bad2.getText(), 2);
-            }
-        });
-
-        bad3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                feedBadFood(bad3.getText(), 3);
-            }
-        });
+            good1.setText(goodFoodArr.get(0));
+            good2.setText(goodFoodArr.get(1));
+            good3.setText(goodFoodArr.get(2));
+            bad1.setText(badFoodArr.get(0));
+            bad2.setText(badFoodArr.get(1));
+//            bad3.setText(badFoodArr.get(2));
 
 
-        return rootView;
-    }
+            SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(getActivity())
+                    .setTheme(SubActionButton.ACCESSIBILITY_LIVE_REGION_NONE);
+
+            FloatingActionMenu centerBottomMenu = new FloatingActionMenu.Builder(getActivity())
+                    .setStartAngle(0)
+                    .setEndAngle(-180)
+                    .setAnimationHandler(new SlideInAnimationHandler())
+                    .addSubActionView(rLSubBuilder.setContentView(bad1).build())
+                    .addSubActionView(rLSubBuilder.setContentView(good1).build())
+                    .addSubActionView(rLSubBuilder.setContentView(good2).build())
+                    .addSubActionView(rLSubBuilder.setContentView(good3).build())
+                    .addSubActionView(rLSubBuilder.setContentView(bad2).build())
+                    .attachTo(darkButton)
+                    .build();
+
+            // OnClickListeners for each menu item
+            good1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    feedGoodFood(good1.getText(), 1);
+                }
+            });
+
+            good2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    feedGoodFood(good2.getText(), 2);
+                }
+            });
+
+            good3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    feedGoodFood(good3.getText(), 3);
+                }
+            });
+
+            bad1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    feedBadFood(bad1.getText(), 1);
+                }
+            });
+
+            bad2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    feedBadFood(bad2.getText(), 2);
+                }
+            });
+
+//            bad3.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    feedBadFood(bad3.getText(), 3);
+//                }
+//            });
+
+
+            return rootView;
+        }
 
 
         public void feedGoodFood(CharSequence goodFood, int msgNum) {
-            Toast.makeText(getContext(), "I love " + goodFood + "! YAM!",
+            Toast.makeText(getContext(), "I love " + goodFood + "! YUM!",
                     Toast.LENGTH_SHORT).show(); // todo add more msg
 
             Session.curmonster.update_when_fed();

@@ -42,8 +42,8 @@ public class ChooseFoodActivity extends AppCompatActivity {
                 String bad1 = bad1_e.getText().toString();
                 bda2_e = (EditText) findViewById(R.id.bad2);
                 String bad2 = bda2_e.getText().toString();
-                bad3_e= (EditText) findViewById(R.id.bad3);
-                String bad3 = bad3_e.getText().toString();
+//                bad3_e= (EditText) findViewById(R.id.bad3);
+//                String bad3 = bad3_e.getText().toString();
 
                 ArrayList<String> good_list = new ArrayList<>();
                 ArrayList<String> bad_list = new ArrayList<>();
@@ -61,10 +61,10 @@ public class ChooseFoodActivity extends AppCompatActivity {
                     bad_list.add(bad1);}
                 if (!(bad2.equals(""))){
                     bad_list.add(bad2);}
-                if (!(bad3.equals(""))){
-                    bad_list.add(bad3);}
+//                if (!(bad3.equals(""))){
+//                    bad_list.add(bad3);}
 
-                    if ((bad_list.size() == 3) && (good_list.size() == 3)){
+                    if ((bad_list.size() == 2) && (good_list.size() == 3)){
                 Monster new_m = new Monster(good_list,bad_list,type_m);
                 save_monster(new_m);
                 Session.set_monster(new_m);
@@ -100,6 +100,7 @@ public class ChooseFoodActivity extends AppCompatActivity {
 
         Intent it = new Intent(ChooseFoodActivity.this, MainScreenActivity.class);
         startActivity(it);
+        finish();
     }
 
 }

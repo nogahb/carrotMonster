@@ -98,7 +98,6 @@ public class SlideAdapter  extends PagerAdapter {
         String p2 = String.valueOf(p);
         it.putExtra("KEY_StringName",p2);
         context.startActivity(it);
-
     }
 
 }

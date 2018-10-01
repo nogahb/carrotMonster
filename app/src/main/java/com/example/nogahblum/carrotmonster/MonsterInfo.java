@@ -17,7 +17,7 @@ public class MonsterInfo extends AppCompatActivity {
         info4 = (TextView)findViewById(R.id.user_n_info);
 
         if (Session.curmonster != null){
-            String type_1 = "Type "+ Session.curmonster.getType();
+            String type_1 = "Monster Type "+ Session.curmonster.getType();
             info1.setText(type_1);
             String health = "Health "+String.valueOf((Session.curmonster.getHealth()));
             info2.setText(health);
