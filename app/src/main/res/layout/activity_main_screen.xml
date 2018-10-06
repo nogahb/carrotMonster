@@ -18,9 +18,9 @@
     <ImageView
         android:id="@+id/imageViewmain"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        app:srcCompat="@drawable/image_1" />
+        android:layout_height="300dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/fenratarir0" />
 
 
 </LinearLayout>

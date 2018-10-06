@@ -4,4 +4,7 @@
     <string name="main_screen">MAIN SCREEN</string>
     <string name="create_me">Create Me!</string>
     <string name="action_settings">action_settings</string>
+    <string name="what_i_want_to_eat">WHAT I WANT TO EAT</string>
+    <string name="and_what_i_don_t">(AND WHAT I DON\'T)</string>
+    <string name="my_good_food">MY GOOD FOOD:</string>
 </resources>

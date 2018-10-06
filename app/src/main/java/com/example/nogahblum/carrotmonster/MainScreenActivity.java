@@ -24,6 +24,7 @@ import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 
 import java.util.ArrayList;
 
+
 public class MainScreenActivity extends AppCompatActivity {
 
     private SharedPreferences prefs;
@@ -161,6 +162,7 @@ public class MainScreenActivity extends AppCompatActivity {
             final TextView bad2 = new TextView(this.getContext());
 //            final TextView bad3 = new TextView(this.getContext());
 
+            // set text
             good1.setText(goodFoodArr.get(0));
             good2.setText(goodFoodArr.get(1));
             good3.setText(goodFoodArr.get(2));
@@ -168,59 +170,66 @@ public class MainScreenActivity extends AppCompatActivity {
             bad2.setText(badFoodArr.get(1));
 //            bad3.setText(badFoodArr.get(2));
 
-
             SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(getActivity())
                     .setTheme(SubActionButton.ACCESSIBILITY_LIVE_REGION_NONE);
+
+            // set menu sub-buttons
+            View good1Button = rLSubBuilder.setContentView(good1).build();
+            View good2Button = rLSubBuilder.setContentView(good2).build();
+            View good3Button = rLSubBuilder.setContentView(good3).build();
+            View bad1Button = rLSubBuilder.setContentView(bad1).build();
+            View bad2Button = rLSubBuilder.setContentView(bad2).build();
+
 
             FloatingActionMenu centerBottomMenu = new FloatingActionMenu.Builder(getActivity())
                     .setStartAngle(0)
                     .setEndAngle(-180)
                     .setAnimationHandler(new SlideInAnimationHandler())
-                    .addSubActionView(rLSubBuilder.setContentView(bad1).build())
-                    .addSubActionView(rLSubBuilder.setContentView(good1).build())
-                    .addSubActionView(rLSubBuilder.setContentView(good2).build())
-                    .addSubActionView(rLSubBuilder.setContentView(good3).build())
-                    .addSubActionView(rLSubBuilder.setContentView(bad2).build())
+                    .addSubActionView(bad1Button)
+                    .addSubActionView(good1Button)
+                    .addSubActionView(good2Button)
+                    .addSubActionView(good3Button)
+                    .addSubActionView(bad2Button)
                     .attachTo(darkButton)
                     .build();
 
             // OnClickListeners for each menu item
-            good1.setOnClickListener(new View.OnClickListener() {
+            good1Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     feedGoodFood(good1.getText(), 1);
                 }
             });
 
-            good2.setOnClickListener(new View.OnClickListener() {
+            good2Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     feedGoodFood(good2.getText(), 2);
                 }
             });
 
-            good3.setOnClickListener(new View.OnClickListener() {
+            good3Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     feedGoodFood(good3.getText(), 3);
                 }
             });
 
-            bad1.setOnClickListener(new View.OnClickListener() {
+            bad1Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     feedBadFood(bad1.getText(), 1);
                 }
             });
 
-            bad2.setOnClickListener(new View.OnClickListener() {
+            bad2Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     feedBadFood(bad2.getText(), 2);
                 }
             });
 
-//            bad3.setOnClickListener(new View.OnClickListener() {
+//            bad3Button.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
 //                    feedBadFood(bad3.getText(), 3);

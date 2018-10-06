@@ -68,8 +68,8 @@ public class ChooseFoodActivity extends AppCompatActivity {
                 Monster new_m = new Monster(good_list,bad_list,type_m);
                 save_monster(new_m);
                 Session.set_monster(new_m);
-                        Toast.makeText(ChooseFoodActivity.this,
-                                "OK", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(ChooseFoodActivity.this,
+//                                "OK", Toast.LENGTH_LONG).show();
                         startNextActivity();
                 }
                 else {
