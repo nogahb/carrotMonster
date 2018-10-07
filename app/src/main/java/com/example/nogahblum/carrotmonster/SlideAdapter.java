@@ -22,8 +22,8 @@ public class SlideAdapter  extends PagerAdapter {
 
     // list of images
     public int[] lst_images = {
-            R.drawable.image_1,//todo change name of images to this name
-            R.drawable.image_2,
+            R.drawable.image_1,//todo change name of images to this name (type0)
+            R.drawable.image_2, // type 1
 //            R.drawable.image_3,
 //            R.drawable.image_4
     };
@@ -78,7 +78,7 @@ public class SlideAdapter  extends PagerAdapter {
 
 //        Button button= (Button) findViewById(R.id.createMe);
         Button button = (Button) view.findViewById(R.id.createMe);
-            button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startNextActivity(position);

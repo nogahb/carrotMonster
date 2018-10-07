@@ -56,7 +56,6 @@ public class MainScreenActivity extends AppCompatActivity {
                 img.setImageResource(R.drawable.image_2);
             }
         }
-        //todo image_dufault
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
@@ -73,21 +72,21 @@ public class MainScreenActivity extends AppCompatActivity {
                 Session.curmonster.changeLevel(1);
                 if(Session.curmonster.type.equals("0")){
                     img.setImageResource(R.drawable.fenratarir2);
-                    //todo good img_0
+                    //todo good img_0 level 0
                 }
                 else{img.setImageResource(R.drawable.fenratarir2);}
 
-                //todo good img_1
+                //todo good img_1 level 0
             }
 
             if (Session.curmonster.getGrowthCounter() < -3) {
                 Session.curmonster.changeLevel(-1);
                 if(Session.curmonster.type.equals("0")){
-                    //todo bad img_0
+                    //todo bad img_0 level -1
                     img.setImageResource(R.drawable.fenratarir2);
                 }
                 else{
-                img.setImageResource(R.drawable.image_2);//todo bad img_1
+                img.setImageResource(R.drawable.image_2);//todo bad img_1 level -1
             }}
 
 
