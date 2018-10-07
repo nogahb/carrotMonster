@@ -67,19 +67,19 @@ public class MainScreenActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         if (Session.curmonster != null){
-
-            if (Session.curmonster.getGrowthCounter() > 5) {
+            int int_level = Session.curmonster.getLevel();
+            if ((Session.curmonster.getGrowthCounter() > 5) && (int_level == 0)) {
                 Session.curmonster.changeLevel(1);
                 if(Session.curmonster.type.equals("0")){
                     img.setImageResource(R.drawable.fenratarir2);
                     //todo good img_0 level 0
                 }
-                else{img.setImageResource(R.drawable.fenratarir2);}
+                else if (int_level == 0){img.setImageResource(R.drawable.fenratarir2);}
 
                 //todo good img_1 level 0
             }
-
-            if (Session.curmonster.getGrowthCounter() < -3) {
+            //todo added up from level 1 to 2
+            if ((Session.curmonster.getGrowthCounter() < -3)  && (int_level == 0)) {
                 Session.curmonster.changeLevel(-1);
                 if(Session.curmonster.type.equals("0")){
                     //todo bad img_0 level -1
