@@ -22,24 +22,24 @@ public class SlideAdapter  extends PagerAdapter {
 
     // list of images
     public int[] lst_images = {
-            R.drawable.image_1,
+            R.drawable.image_1,//todo change name of images to this name
             R.drawable.image_2,
-            R.drawable.image_3,
-            R.drawable.image_4
+//            R.drawable.image_3,
+//            R.drawable.image_4
     };
     // list of titles
     public String[] lst_title = {
             "COSMONAUT",
             "SATELITE",
-            "GALAXY",
-            "ROCKET"
+//            "GALAXY",
+//            "ROCKET"
     }   ;
     // list of descriptions
     public String[] lst_description = {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+//            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
+//            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
     };
     // list of background colors
     public int[]  lst_backgroundcolor = {

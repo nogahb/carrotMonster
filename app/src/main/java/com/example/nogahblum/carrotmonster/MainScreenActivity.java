@@ -48,7 +48,14 @@ public class MainScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_screen);
 
         ImageView img= (ImageView) findViewById(R.id.imageViewmain);
-        img.setImageResource(R.drawable.image_1);
+        if (Session.curmonster != null){
+            if(Session.curmonster.type.equals("0")){
+                img.setImageResource(R.drawable.image_1);
+            }
+            else{
+                img.setImageResource(R.drawable.image_2);
+            }
+        }
         //todo image_dufault
 
         if (savedInstanceState == null) {
@@ -64,13 +71,24 @@ public class MainScreenActivity extends AppCompatActivity {
 
             if (Session.curmonster.getGrowthCounter() > 5) {
                 Session.curmonster.changeLevel(1);
-                img.setImageResource(R.drawable.image_2);//todo good img
+                if(Session.curmonster.type.equals("0")){
+                    img.setImageResource(R.drawable.fenratarir2);
+                    //todo good img_0
+                }
+                else{img.setImageResource(R.drawable.fenratarir2);}
+
+                //todo good img_1
             }
 
             if (Session.curmonster.getGrowthCounter() < -3) {
                 Session.curmonster.changeLevel(-1);
-                img.setImageResource(R.drawable.image_2);//todo bad img
-            }
+                if(Session.curmonster.type.equals("0")){
+                    //todo bad img_0
+                    img.setImageResource(R.drawable.fenratarir2);
+                }
+                else{
+                img.setImageResource(R.drawable.image_2);//todo bad img_1
+            }}
 
 
             String satet  = Session.curmonster.check_on_monster();
