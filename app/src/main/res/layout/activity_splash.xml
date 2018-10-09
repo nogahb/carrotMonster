@@ -15,7 +15,7 @@
         android:layout_width="240dp"
         android:layout_height="300dp"
         android:layout_marginTop="60dp"
-        app:srcCompat="@drawable/image_2"
+        app:srcCompat="@drawable/main_monster"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
