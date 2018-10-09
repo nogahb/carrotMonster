@@ -46,15 +46,52 @@ public class MainScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-
         ImageView img= (ImageView) findViewById(R.id.imageViewmain);
+        img.setImageResource(R.drawable.image_1);
+
         if (Session.curmonster != null){
-            if(Session.curmonster.type.equals("0")){
+            int int_level = Session.curmonster.getLevel();
+            if(int_level == 0){
+            if(Session.curmonster.type.equals("0") ){//todo if type zero good level 0
                 img.setImageResource(R.drawable.image_1);
             }
             else{
-                img.setImageResource(R.drawable.image_2);
+                img.setImageResource(R.drawable.image_2);//todo if type zero bad 0
             }
+        }
+        if (int_level == 1){
+            if(Session.curmonster.type.equals("0") ){//todo if type zero good level 1
+                img.setImageResource(R.drawable.image_1);
+            }
+            else{
+                img.setImageResource(R.drawable.image_2);//todo if type zero bad level1
+            }
+        }
+            if (int_level == 2){
+                if(Session.curmonster.type.equals("0") ){//todo if type zero good level 2
+                    img.setImageResource(R.drawable.image_1);
+                }
+                else{
+                    img.setImageResource(R.drawable.image_2);//todo if type zero bad level2
+                }
+            }
+            if (int_level == -1){
+                if(Session.curmonster.type.equals("0") ){//todo if type zero good level -1
+                    img.setImageResource(R.drawable.image_1);
+                }
+                else{
+                    img.setImageResource(R.drawable.image_2);//todo if type zero bad level-1
+                }
+            }
+            if (int_level ==-2){
+                if(Session.curmonster.type.equals("0") ){//todo if type zero good level -2
+                    img.setImageResource(R.drawable.image_1);
+                }
+                else{
+                    img.setImageResource(R.drawable.image_2);//todo if type zero bad level-2
+                }
+            }
+
         }
 
         if (savedInstanceState == null) {
@@ -72,11 +109,26 @@ public class MainScreenActivity extends AppCompatActivity {
                 Session.curmonster.changeLevel(1);
                 if(Session.curmonster.type.equals("0")){
                     img.setImageResource(R.drawable.fenratarir2);
-                    //todo good img_0 level 0
+                    Session.curmonster.changeGrowthCounter(0);
+                    //todo good img_0 level 1
                 }
-                else if (int_level == 0){img.setImageResource(R.drawable.fenratarir2);}
+                else{img.setImageResource(R.drawable.fenratarir2);}
+                Session.curmonster.changeGrowthCounter(0);
 
-                //todo good img_1 level 0
+                //todo good img_1 level 1
+            }
+            if ((Session.curmonster.getGrowthCounter() > 5) && (int_level == 1)) {
+                Session.curmonster.changeLevel(2);
+                if(Session.curmonster.type.equals("0")){
+                    img.setImageResource(R.drawable.fenratarir2);
+                    Session.curmonster.changeGrowthCounter(0);
+
+                    //todo good img_0 level 1
+                }
+                else{img.setImageResource(R.drawable.fenratarir2);}
+                Session.curmonster.changeGrowthCounter(0);
+
+                //todo good img_1 level 1
             }
             //todo added up from level 1 to 2
             if ((Session.curmonster.getGrowthCounter() < -3)  && (int_level == 0)) {
@@ -84,10 +136,27 @@ public class MainScreenActivity extends AppCompatActivity {
                 if(Session.curmonster.type.equals("0")){
                     //todo bad img_0 level -1
                     img.setImageResource(R.drawable.fenratarir2);
+                    Session.curmonster.changeGrowthCounter(0);
+
                 }
                 else{
                 img.setImageResource(R.drawable.image_2);//todo bad img_1 level -1
-            }}
+                    Session.curmonster.changeGrowthCounter(0);
+
+                }}
+            if ((Session.curmonster.getGrowthCounter() < -3)  && (int_level == -1)) {
+                Session.curmonster.changeLevel(-2);
+                if(Session.curmonster.type.equals("0")){
+                    //todo bad img_0 level -2
+                    img.setImageResource(R.drawable.fenratarir2);
+                    Session.curmonster.changeGrowthCounter(0);
+
+                }
+                else{
+                    img.setImageResource(R.drawable.image_2);//todo bad img_1 level -2
+                    Session.curmonster.changeGrowthCounter(0);
+
+                }}
 
 
             String satet  = Session.curmonster.check_on_monster();

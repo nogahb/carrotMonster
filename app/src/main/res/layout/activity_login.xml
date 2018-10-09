@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="72dp"
-        app:srcCompat="@drawable/main_monster" />
+        app:srcCompat="@drawable/image_1" />
 
     <EditText
         android:id="@+id/user_name"
