@@ -9,9 +9,9 @@
         android:id="@+id/welcome_message_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@drawable/gradient"
-        android:orientation="vertical"
         android:layout_margin="16dp"
+        android:background="@color/purple"
+        android:orientation="vertical"
         android:padding="16dp"
         android:visibility="visible">
 
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
-            android:text="carrot Monster"
+            android:text="@string/why_carrot_monster"
             android:textColor="#ddd"
             android:textSize="28sp"
             android:textStyle="bold" />
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/welcome_title"
-            android:text="Carrot Monster is an app developed for helping people quit bad habits and gain good ones, specifically regarding food. In this app the user will create a monster that will grow based on the user habits, if the user will feed the monster with good habits, based on his behavior the monster will grow. If the user will feed the monster with good habits the monster will grow to its attracting state, else the monster will change to a less attracting state. The monster has to be fed or else it will grow old and die(at least  every 100 hours). "
+            android:text="@string/carrot_monster_is_an_app_developed_for_helping_people_quit_bad_habits_and_gain_good_ones_specifically_regarding_food_in_this_app_the_user_will_create_a_monster_that_will_grow_based_on_the_user_habits_if_the_user_will_feed_the_monster_with_good_habits_based_on_his_behavior_the_monster_will_grow_if_the_user_will_feed_the_monster_with_good_habits_the_monster_will_grow_to_its_attracting_state_else_the_monster_will_change_to_a_less_attracting_state_the_monster_has_to_be_fed_or_else_it_will_grow_old_and_die_at_least_every_100_hours"
             android:textColor="#ddd"
             android:textSize="18sp" />
 
@@ -54,19 +54,6 @@
         <!--android:layout_height="wrap_content"-->
         <!--android:src="@drawable/android_ic" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:textSize="25sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="ViralAndroid.com"
-            android:textSize="30sp" />
-
     </LinearLayout>
 
     <Button
@@ -78,8 +65,8 @@
         android:layout_marginBottom="30dp"
         android:layout_marginEnd="34dp"
         android:background="@android:color/transparent"
-        android:text="GOT IT"
-        android:textSize="20dp"
+        android:text="@string/got_it"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
 </RelativeLayout>

@@ -319,7 +319,7 @@ public class MainScreenActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         Gson gson = new Gson();
         String json = gson.toJson(Session.curmonster);
-        editor.putString(Session.USER_NAME+"monster", json);
+//        editor.putString(Session.USER_NAME+"monster", json);
         editor.apply();
     }
 
@@ -705,6 +705,18 @@ public class MainScreenActivity extends AppCompatActivity {
             bad1.setText(badFoodArr.get(0));
             bad2.setText(badFoodArr.get(1));
 //            bad3.setText(badFoodArr.get(2));
+
+            //set textView size
+//            good1.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+//            good2.setHeight(190);
+
+            //set text size
+//            good1.setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM);
+//            good2.setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM);
+//            good3.setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM);
+//            bad1.setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM);
+//            bad2.setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM);
+
 
             SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(getActivity())
                     .setTheme(SubActionButton.ACCESSIBILITY_LIVE_REGION_NONE);

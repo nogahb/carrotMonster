@@ -2,9 +2,36 @@
     <string name="app_name">carrotMonster</string>
     <string name="title_activity_choose_monster">chooseMonster</string>
     <string name="main_screen">MAIN SCREEN</string>
-    <string name="create_me">Create Me!</string>
     <string name="action_settings">action_settings</string>
     <string name="what_i_want_to_eat">WHAT I WANT TO EAT</string>
     <string name="and_what_i_don_t">(AND WHAT I DON\'T)</string>
     <string name="my_good_food">MY GOOD FOOD:</string>
+    <string name="image_desc">Image</string>
+    <string name="login">Login</string>
+    <string name="register_here">Register Here.</string>
+    <string name="tenter_password">\tEnter password</string>
+    <string name="tenter_username">\tEnter username</string>
+    <string name="tenter_3rd">\tEnter 3rd</string>
+    <string name="my_bad_food">MY BAD FOOD:</string>
+    <string name="apply">Apply!</string>
+    <string name="tenter_1st">\tEnter 1st</string>
+    <string name="tenter_2nd">\tEnter 2nd</string>
+    <string name="hello">HELLO!</string>
+    <string name="enter_username">Enter username</string>
+    <string name="enter_password">Enter password</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="carrrot_monster">Carrrot Monster</string>
+    <string name="monster_info">Monster info</string>
+    <string name="monster_type">Monster Type</string>
+    <string name="health">Health</string>
+    <string name="level">Level</string>
+    <string name="title_here">Title Here</string>
+    <string name="description_is_here">Description is Here</string>
+    <string name="create_me">Create Me!</string>
+    <string name="why_carrot_monster">Why Carrot Monster?</string>
+    <string name="carrot_monster_is_an_app_developed_for_helping_people_quit_bad_habits_and_gain_good_ones_specifically_regarding_food_in_this_app_the_user_will_create_a_monster_that_will_grow_based_on_the_user_habits_if_the_user_will_feed_the_monster_with_good_habits_based_on_his_behavior_the_monster_will_grow_if_the_user_will_feed_the_monster_with_good_habits_the_monster_will_grow_to_its_attracting_state_else_the_monster_will_change_to_a_less_attracting_state_the_monster_has_to_be_fed_or_else_it_will_grow_old_and_die_at_least_every_100_hours">Carrot Monster is an app developed for helping people quit bad habits and gain good ones, specifically regarding food. In this app the user will create a monster that will grow based on the user habits, if the user will feed the monster with good habits, based on his behavior the monster will grow. If the user will feed the monster with good habits the monster will grow to its attracting state, else the monster will change to a less attracting state. The monster has to be fed or else it will grow old and die(at least every 100 hours).</string>
+    <string name="got_it">GOT IT</string>
+
 </resources>

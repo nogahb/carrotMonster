@@ -31,24 +31,24 @@ public class SlideAdapter  extends PagerAdapter {
     };
     // list of titles
     public String[] lst_title = {
-            "fenratarir",
-            "hiakango"
+            "FENRATARIR",
+            "HIAKANGO"
 //            "GALAXY",
 //            "ROCKET"
     }   ;
     // list of descriptions
     public String[] lst_description = {
-            "I am fenratarir",
-            "I am hiakango"
+            "Fenratarir arrives from the far countries of the North. Her mysterious eyes are deep and her silence magical. She is the daughter of the Godess of the wolf and the Squarell God.",
+            "The Hiakango comes from the tropical islands of the Ancient Kingdom. His steadfast smile is sensitive and his soul spreads light. He is the son of the Nutrition God and the Mountain Godess."
 //            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
 //            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
     };
     // list of background colors
     public int[]  lst_backgroundcolor = {
-            Color.rgb(55,55,55),
+            Color.rgb(1,188,212),
             Color.rgb(239,85,85)
-//            Color.rgb(110,49,89),
-//            Color.rgb(1,188,212)
+//            Color.rgb(55,55,55),
+//            Color.rgb(110,49,89)
     };
 
 
@@ -109,6 +109,7 @@ public class SlideAdapter  extends PagerAdapter {
         String p2 = String.valueOf(p);
         it.putExtra("KEY_StringName",p2);
         context.startActivity(it);
+
     }
 
 }

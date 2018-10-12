@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nogahblum.carrotmonster.MainScreenActivity"
-    android:background="@drawable/gradient"
-    android:orientation="vertical">
+    android:background="@color/purple"
+    android:orientation="vertical"
+    tools:context="com.example.nogahblum.carrotmonster.MainScreenActivity">
 
 
     <include
@@ -19,6 +19,7 @@
         android:id="@+id/imageViewmain"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:contentDescription="@string/image_desc"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/fenratarir0" />
 
