@@ -1,36 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_light"
-    tools:context=".BaseActivity">
+    android:background="@drawable/gradient"
+    tools:context=".BaseActivity"
+    android:id="@+id/relativeLayout">
 
     <TextView
         android:id="@+id/helloText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:background="@android:color/transparent"
         android:text="@string/what_i_want_to_eat"
         android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/helloText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:text="@string/and_what_i_don_t"
-        android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helloText1" />
+        app:layout_constraintTop_toBottomOf="@+id/helloText1"
+        android:background="@android:color/transparent"
+        android:text="@string/and_what_i_don_t"
+        android:textSize="20sp" />
 
 
     <TextView
@@ -159,3 +160,169 @@
         app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
+
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:id="@+id/relativeLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@android:color/holo_blue_light"-->
+    <!--tools:context=".BaseActivity">-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/helloText1"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="42dp"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--android:text="@string/what_i_want_to_eat"-->
+        <!--android:textSize="35sp"-->
+        <!--android:textStyle="bold"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/helloText2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--android:text="@string/and_what_i_don_t"-->
+        <!--android:textSize="20sp"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/helloText1" />-->
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/goodTitle"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="16dp"-->
+        <!--android:layout_marginTop="40dp"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--android:text="@string/my_good_food"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textStyle="bold"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/helloText2" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/good1"-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="#11000000"-->
+        <!--android:drawableLeft="@drawable/ic_good_food"-->
+        <!--android:ems="10"-->
+        <!--android:hint="  Enter 1st"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:textSize="16dp"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/goodTitle" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/good2"-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:background="#11000000"-->
+        <!--android:drawableLeft="@drawable/ic_good_food"-->
+        <!--android:ems="10"-->
+        <!--android:hint="  Enter 2nd"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:textSize="16dp"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/good1" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/good3"-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:background="#11000000"-->
+        <!--android:drawableLeft="@drawable/ic_good_food"-->
+        <!--android:ems="10"-->
+        <!--android:hint="  Enter 3rd"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:textSize="16dp"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/good2" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/badTitle"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--android:layout_marginTop="40dp"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--android:text="MY BAD FOOD:"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textStyle="bold"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/good3" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/bad1"-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="#11000000"-->
+        <!--android:drawableLeft="@drawable/ic_bad_food"-->
+        <!--android:ems="10"-->
+        <!--android:hint="  Enter 1st"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:textSize="16dp"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/badTitle" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/bad2"-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:background="#11000000"-->
+        <!--android:drawableLeft="@drawable/ic_bad_food"-->
+        <!--android:ems="10"-->
+        <!--android:hint="  Enter 2nd"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:textSize="16dp"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/bad1" />-->
+
+    <!--&lt;!&ndash;<EditText&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/bad3"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="250dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="40dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_below="@+id/bad2"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_centerHorizontal="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="#11000000"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:drawableLeft="@drawable/ic_bad_food"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:ems="10"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:hint="  Enter 3rd"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:inputType="textPersonName"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="16dp" />&ndash;&gt;-->
+
+    <!--<Button-->
+        <!--android:id="@+id/Aply"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="13dp"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--android:text="Apply!"-->
+        <!--android:textSize="18dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent" />-->
+
+<!--</android.support.constraint.ConstraintLayout>-->

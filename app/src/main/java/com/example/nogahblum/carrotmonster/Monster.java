@@ -16,7 +16,7 @@ public class Monster {
 
     // Monster fields:
     String type;
-    private int growthCounter;
+    public int growthCounter;
     private int level;
     private Long last_fed;
     private int health;

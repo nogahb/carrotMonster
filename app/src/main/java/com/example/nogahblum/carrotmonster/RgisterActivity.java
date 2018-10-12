@@ -23,7 +23,7 @@ public class RgisterActivity extends AppCompatActivity {
         mName = (EditText) findViewById(R.id.user_name);
         mPassword = (EditText) findViewById(R.id.editText2_password__register);
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = prefs.edit();
+//        SharedPreferences.Editor editor = prefs.edit();
 //        logOut();
 
 

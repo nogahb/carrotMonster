@@ -48,23 +48,21 @@ public class ChooseFoodActivity extends AppCompatActivity {
                 ArrayList<String> good_list = new ArrayList<>();
                 ArrayList<String> bad_list = new ArrayList<>();
 
-                if (!(good1.equals(""))){
-//                    Toast.makeText(ChooseFoodActivity.this,
-//                            "OK", Toast.LENGTH_LONG).show();
+                if (!(good1.equals("")) &&(good1.length() < 14) ){
                 good_list.add(good1);}
-                if (!(good2.equals(""))){
+                if (!(good2.equals(""))&&(good2.length() < 14)){
                     good_list.add(good2);}
-                if (!(good3.equals(""))){
+                if (!(good3.equals(""))&&(good3.length() < 14)){
                     good_list.add(good3);}
 
-                if (!(bad1.equals(""))){
+                if (!(bad1.equals(""))&&(bad1.length() < 14)){
                     bad_list.add(bad1);}
-                if (!(bad2.equals(""))){
+                if (!(bad2.equals(""))&&(bad2.length() < 14)){
                     bad_list.add(bad2);}
 //                if (!(bad3.equals(""))){
 //                    bad_list.add(bad3);}
 
-                    if ((bad_list.size() == 2) && (good_list.size() == 3)){
+                if ((bad_list.size() == 2) && (good_list.size() == 3)){
                 Monster new_m = new Monster(good_list,bad_list,type_m);
                 save_monster(new_m);
                 Session.set_monster(new_m);
@@ -74,7 +72,7 @@ public class ChooseFoodActivity extends AppCompatActivity {
                 }
                 else {
                         Toast.makeText(ChooseFoodActivity.this,
-                                "Failed please fill all the fields above before continuing ", Toast.LENGTH_LONG).show();
+                                "Failed food name must not be empty and shorter than 14 letters", Toast.LENGTH_LONG).show();
                     }
             }
         });

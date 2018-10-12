@@ -22,6 +22,7 @@ public class MonsterInfo extends AppCompatActivity {
             String health = "Health "+String.valueOf((Session.curmonster.getHealth()));
             info2.setText(health);
             String level = "Level "+String.valueOf(Session.curmonster.getLevel());
+//            String level = "Level "+String.valueOf(Session.curmonster.growthCounter);
             info3.setText(level);
         }
 
