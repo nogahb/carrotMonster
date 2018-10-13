@@ -31,7 +31,10 @@
     <string name="description_is_here">Description is Here</string>
     <string name="create_me">Create Me!</string>
     <string name="why_carrot_monster">Why Carrot Monster?</string>
-    <string name="carrot_monster_is_an_app_developed_for_helping_people_quit_bad_habits_and_gain_good_ones_specifically_regarding_food_in_this_app_the_user_will_create_a_monster_that_will_grow_based_on_the_user_habits_if_the_user_will_feed_the_monster_with_good_habits_based_on_his_behavior_the_monster_will_grow_if_the_user_will_feed_the_monster_with_good_habits_the_monster_will_grow_to_its_attracting_state_else_the_monster_will_change_to_a_less_attracting_state_the_monster_has_to_be_fed_or_else_it_will_grow_old_and_die_at_least_every_100_hours">Carrot Monster is an app developed for helping people quit bad habits and gain good ones, specifically regarding food. In this app the user will create a monster that will grow based on the user habits, if the user will feed the monster with good habits, based on his behavior the monster will grow. If the user will feed the monster with good habits the monster will grow to its attracting state, else the monster will change to a less attracting state. The monster has to be fed or else it will grow old and die(at least every 100 hours).</string>
+    <string name="carrot_monster_intro">Carrot Monster is an app developed for helping people quit bad habits and gain good ones, specifically regarding food. In this app the user will create a monster that will grow based on his habits. If the user will feed the monster with good food the monster will grow to its attracting state, else the monster will change to a less attracting state.\n\n\nHOW TO PLAY?\n\nEvery time you eat, feed your monster with what you ate.\nThe monster has to be fed or else it will grow old and die (at least every 100 hours).\n\n\n\nHAVE FUN!</string>
     <string name="got_it">GOT IT</string>
+    <string name="create_new_monster">CREATE NEW MONSTER</string>
+    <string name="game_over">GAME OVER!</string>
+    <string name="you_win_good_job">GOOD JOB! YOU WIN!</string>
 
 </resources>

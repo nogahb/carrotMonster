@@ -319,7 +319,7 @@ public class MainScreenActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         Gson gson = new Gson();
         String json = gson.toJson(Session.curmonster);
-//        editor.putString(Session.USER_NAME+"monster", json);
+        editor.putString(Session.USER_NAME+"monster", json);
         editor.apply();
     }
 
@@ -336,64 +336,61 @@ public class MainScreenActivity extends AppCompatActivity {
         if (Session.curmonster != null){
             int int_level = Session.curmonster.getLevel();
             if(int_level == 0){
-            if(Session.curmonster.type.equals("0") ){
-//                img.setImageResource(R.drawable.image_1);
+                if(Session.curmonster.type.equals("0") ){
+    //                img.setImageResource(R.drawable.image_1);
 
-                Picasso.get().load(R.drawable.fenratarir0)
-                        .resize(2048, 2048)
-                        .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
-                        .into(img);
-            }
-            else{
+                    Picasso.get().load(R.drawable.fenratarir0)
+                            .resize(2048, 2048)
+                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
+                            .into(img);
+                } else {
                 Picasso.get().load(R.drawable.hiakango0)
                         .resize(2048, 2048)
                         .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
                         .into(img);
-            }
-        }
-        else if (int_level == 1){
-            if(Session.curmonster.type.equals("0") ){
-                Picasso.get().load(R.drawable.fenratarir1)
-                        .resize(2048, 2048)
-                        .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
-                        .into(img);
-            }
-            else{
-//                img.setImageResource(R.drawable.image_2);
-                Picasso.get().load(R.drawable.hiakango1)
-                        .resize(2048, 2048)
-                        .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
-                        .into(img);
-            }
-        }
-            else if (int_level == 2){
+                }
+            } else if (int_level == 1) {
                 if(Session.curmonster.type.equals("0") ){
-//                    img.setImageResource(R.drawable.image_1);
-                    Picasso.get().load(R.drawable.fenratarir2)
+                    Picasso.get().load(R.drawable.fenratarir1)
                             .resize(2048, 2048)
                             .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
                             .into(img);
-
-                }
-                else{
-                    Picasso.get().load(R.drawable.hiakango2)
+                } else {
+    //                img.setImageResource(R.drawable.image_2);
+                    Picasso.get().load(R.drawable.hiakango1)
                             .resize(2048, 2048)
                             .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
                             .into(img);
-
-
-//                    img.setImageResource(R.drawable.image_2);
                 }
             }
-            else if (int_level == -1){
-                if(Session.curmonster.type.equals("0") ){
+
+//            else if (int_level == 2) {
+//                if(Session.curmonster.type.equals("0") ){
+////                    img.setImageResource(R.drawable.image_1);
+//                    Picasso.get().load(R.drawable.fenratarir2)
+//                            .resize(2048, 2048)
+//                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
+//                            .into(img);
+//
+//                } else {
+//                    Picasso.get().load(R.drawable.hiakango2)
+//                            .resize(2048, 2048)
+//                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
+//                            .into(img);
+//
+//
+////                    img.setImageResource(R.drawable.image_2);
+//                }
+//            }
+
+            else if (int_level == -1) {
+                if(Session.curmonster.type.equals("0") ) {
 //                    img.setImageResource(R.drawable.image_1);
                     Picasso.get().load(R.drawable.image_1)//todo tonice fenirr -1 is called image one atleast in my fplder change its name in yours
                             .resize(2048, 2048)
                             .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
                             .into(img);
-                }
-                else{
+                } else {
 
 //                    img.setImageResource(R.drawable.image_2);//
                     Picasso.get().load(R.drawable.hiakango_1)
@@ -402,23 +399,23 @@ public class MainScreenActivity extends AppCompatActivity {
                             .into(img);
                 }
             }
-            else if (int_level ==-2){
-                if(Session.curmonster.type.equals("0") ){
-//                    img.setImageResource(R.drawable.image_1);
 
-                    Picasso.get().load(R.drawable.fenratarir_2)
-                            .resize(2048, 2048)
-                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
-                            .into(img);
-                }
-                else{
-//                    img.setImageResource(R.drawable.image_2);//
-                    Picasso.get().load(R.drawable.fenratarir_2)
-                            .resize(2048, 2048)
-                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
-                            .into(img);
-                }
-            }
+//            else if (int_level ==-2) {
+//                if(Session.curmonster.type.equals("0") ) {
+////                    img.setImageResource(R.drawable.image_1);
+//
+//                    Picasso.get().load(R.drawable.fenratarir_2)
+//                            .resize(2048, 2048)
+//                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
+//                            .into(img);
+//                } else {
+////                    img.setImageResource(R.drawable.image_2);//
+//                    Picasso.get().load(R.drawable.hiakango_2)
+//                            .resize(2048, 2048)
+//                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 2048 pixels.
+//                            .into(img);
+//                }
+//            }
 
         }
 
@@ -431,9 +428,9 @@ public class MainScreenActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.this_toolbar);
         setSupportActionBar(toolbar);
 
-        if (Session.curmonster != null){
+        if (Session.curmonster != null) {
             int int_level = Session.curmonster.getLevel();
-            if ((Session.curmonster.getGrowthCounter() > 5) && (int_level == 0)) {
+            if ((Session.curmonster.getGrowthCounter() > 3) && (int_level == 0)) {
                 Session.curmonster.changeLevel(1);
                 Session.curmonster.growthCounter = 0;
 
@@ -455,8 +452,8 @@ public class MainScreenActivity extends AppCompatActivity {
 
             }
 
-            if ((Session.curmonster.getGrowthCounter() > 5) && (int_level == -1)) {
-                Session.curmonster.changeLevel(0);
+            if ((Session.curmonster.getGrowthCounter() > 3) && (int_level == -1)) {
+                Session.curmonster.changeLevel(1);
                 Session.curmonster.growthCounter = 0;
 
                 if(Session.curmonster.type.equals("0")){
@@ -476,49 +473,52 @@ public class MainScreenActivity extends AppCompatActivity {
                 }
 
             }
-            if ((Session.curmonster.getGrowthCounter() > 5) && (int_level == -2)) {
-                Session.curmonster.changeLevel(-1);
+//            if ((Session.curmonster.getGrowthCounter() > 5) && (int_level == -2)) {
+//                Session.curmonster.changeLevel(1);
+//                Session.curmonster.growthCounter = 0;
+//
+//                if(Session.curmonster.type.equals("0")){
+//
+////              Picasso.with(MainScreenActivity.this).load(R.drawable.fenratarir0).centerCrop().into(img);
+//                    Picasso.get().load(R.drawable.image_1)
+//                            .resize(2048, 2048)
+//                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 1600 pixels.
+//                            .into(img);
+////                    img.setImageResource(R.drawable.fenratarir2);
+//                }
+//                else{
+//                    Picasso.get().load(R.drawable.hiakango_1)
+//                            .resize(2048, 2048)
+//                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 1600 pixels.
+//                            .into(img);
+//                }
+//
+//            }
+            if ((Session.curmonster.getGrowthCounter() > 3) && (int_level == 1)) {
+                Session.curmonster.changeLevel(1);
                 Session.curmonster.growthCounter = 0;
+//                Toast.makeText(MainScreenActivity.this,
+//                        "GOOD JOB", Toast.LENGTH_SHORT).show();
+//
+//                if(Session.curmonster.type.equals("0")){
+//
+//                    Picasso.get().load(R.drawable.fenratarir2)
+//                            .resize(2048, 2048)
+//                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 1600 pixels.
+//                            .into(img);
+////                    img.setImageResource(R.drawable.fenratarir2);
+//
+//                }
+//                else{
+////                    img.setImageResource(R.drawable.fenratarir2);
+//                    Picasso.get().load(R.drawable.hiakango2)
+//                            .resize(2048, 2048)
+//                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 1600 pixels.
+//                            .into(img);
+//                }
 
-                if(Session.curmonster.type.equals("0")){
+                startNextActivityWin(Session.USER_NAME);
 
-//              Picasso.with(MainScreenActivity.this).load(R.drawable.fenratarir0).centerCrop().into(img);
-                    Picasso.get().load(R.drawable.image_1)
-                            .resize(2048, 2048)
-                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 1600 pixels.
-                            .into(img);
-//                    img.setImageResource(R.drawable.fenratarir2);
-                }
-                else{
-                    Picasso.get().load(R.drawable.hiakango_1)
-                            .resize(2048, 2048)
-                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 1600 pixels.
-                            .into(img);
-                }
-
-            }
-            if ((Session.curmonster.getGrowthCounter() > 5) && (int_level == 1)) {
-                Session.curmonster.changeLevel(2);
-                Session.curmonster.growthCounter = 0;
-                Toast.makeText(MainScreenActivity.this,
-                        "GOOD JOB", Toast.LENGTH_SHORT).show();
-
-                if(Session.curmonster.type.equals("0")){
-
-                    Picasso.get().load(R.drawable.fenratarir2)
-                            .resize(2048, 2048)
-                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 1600 pixels.
-                            .into(img);
-//                    img.setImageResource(R.drawable.fenratarir2);
-
-                }
-                else{
-//                    img.setImageResource(R.drawable.fenratarir2);
-                    Picasso.get().load(R.drawable.hiakango2)
-                            .resize(2048, 2048)
-                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 1600 pixels.
-                            .into(img);
-                }
 
             }
             if ((Session.curmonster.getGrowthCounter() < -3)  && (int_level == 0)) {
@@ -542,31 +542,35 @@ public class MainScreenActivity extends AppCompatActivity {
                             .into(img);
                 }}
             if ((Session.curmonster.getGrowthCounter() < -3)  && (int_level == -1)) {
-                Session.curmonster.changeLevel(-2);
+                Session.curmonster.changeLevel(-1);
 //                Session.curmonster.changeGrowthCounter(0);
-                Toast.makeText(MainScreenActivity.this,
-                        ":( :( ", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainScreenActivity.this,
+//                        ":( :(", Toast.LENGTH_SHORT).show();
                 Session.curmonster.growthCounter = 0;
 
 
-                if(Session.curmonster.type.equals("0")){
-//                    img.setImageResource(R.drawable.fenratarir2);
-                    Picasso.get().load(R.drawable.fenratarir_2)
-                            .resize(2048, 2048)
-                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 1600 pixels.
-                            .into(img);
+//                if(Session.curmonster.type.equals("0")){
+////                    img.setImageResource(R.drawable.fenratarir2);
+//                    Picasso.get().load(R.drawable.fenratarir_2)
+//                            .resize(2048, 2048)
+//                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 1600 pixels.
+//                            .into(img);
+//
+//                }
+//                else{
+//                    Picasso.get().load(R.drawable.hiakango_2)
+//                            .resize(2048, 2048)
+//                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 1600 pixels.
+//                            .into(img);
+//
+//                }
 
-                }
-                else{
-                    Picasso.get().load(R.drawable.hiakango_2)
-                            .resize(2048, 2048)
-                            .onlyScaleDown() // the image will only be resized if it's bigger than 2048x 1600 pixels.
-                            .into(img);
+                startNextActivityLose(Session.USER_NAME);
 
-                }}
+            }
 
             if ((Session.curmonster.getGrowthCounter() < -3)  && (int_level == 1)) {
-                Session.curmonster.changeLevel(0);
+                Session.curmonster.changeLevel(-1);
 //                Session.curmonster.changeGrowthCounter(0);
                 Session.curmonster.growthCounter = 0;
 
@@ -587,7 +591,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
                 }}
             if ((Session.curmonster.getGrowthCounter() < -3)  && (int_level ==2)) {
-                Session.curmonster.changeLevel(1);
+                Session.curmonster.changeLevel(-1);
 //                Session.curmonster.changeGrowthCounter(0);
                 Session.curmonster.growthCounter = 0;
 
@@ -653,6 +657,20 @@ public class MainScreenActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void startNextActivityLose(String user) {
+        Intent it = new Intent(MainScreenActivity.this, GameOverActivity.class);
+        startActivity(it);
+        Session.setUserName(user);
+        finish();
+    }
+
+    private void startNextActivityWin(String user) {
+        Intent it = new Intent(MainScreenActivity.this, WinActivity.class);
+        startActivity(it);
+        Session.setUserName(user);
+        finish();
     }
 
     /**
@@ -794,11 +812,10 @@ public class MainScreenActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show(); // todo add more msg
 
             Session.curmonster.update_when_fed();
-
             Session.curmonster.changeGrowthCounter(GOOD_FOOD);
 
 
-            if (Session.curmonster.getGrowthCounter() > 5) {
+            if (Session.curmonster.getGrowthCounter() > 3) {
                 //restart
                 getActivity().recreate();
             }

@@ -28,7 +28,9 @@
         <activity android:name=".UserInfo" />
         <activity android:name=".MonsterInfo" />
         <activity android:name=".RgisterActivity" />
-        <activity android:name=".ChooseFoodActivity"></activity>
+        <activity android:name=".ChooseFoodActivity" />
+        <activity android:name=".GameOverActivity" />
+        <activity android:name=".WinActivity"></activity>
     </application>
 
 </manifest>
